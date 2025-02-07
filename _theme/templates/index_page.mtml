@@ -33,17 +33,11 @@
 <$mt:Include module="header"$>
 
 <section id="mainvisual">
-  <mt:Assets>
-<div class="item" id="<$mt:AssetID$>">
-  <a class="asset-image" href="<$mt:AssetURL$>"><img src="<$mt:AssetThumbnailURL height="1200"$>" class="asset-img-thumb" alt="<$mt:AssetLabel$>" title="<$mt:AssetLabel$>" /></a>
-  <dl>
-  <mt:ImageCustomFields>
-    <dt><$mt:ImageCustomFieldName$>: <$mt:ImageCustomFieldValue$></dt>
-    <dd><$mt:ImageCustomFieldDescription$></dd>
-  </mt:ImageCustomFields>
-  </dl>
-</div>
-</mt:Assets>
+  <mt:Assets include="mv">
+    <div class="item" id="<$mt:AssetID$>">
+      <img src="<$mt:AssetThumbnailLink $>" class="mv" alt="<$mt:AssetLabel$>" title="<$mt:AssetLabel$>" />
+    </div>
+  </mt:Assets>
   <div class="container">
     <h2><img src="<$mt:BlogURL encode_html="1"$>images/main-img.png" alt=""></h2>
     <p id="main-text">Movable Typeデザインテーマ「Simple Corporate」のデモサイトです。<br />
