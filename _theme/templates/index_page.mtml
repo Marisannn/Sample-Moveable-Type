@@ -38,24 +38,6 @@
       <img src="<$mt:AssetURL$>" class="mv" alt="<$mt:AssetLabel$>" title="<$mt:AssetLabel$>" />
     </div>
   </mt:Assets>
-  <mt:Assets type="video" include="video">
-    <mt:AssetsHeader>
-  <dl>
-    </mt:AssetsHeader>
-    <dt><a href="<$mt:AssetURL$>"><$mt:AssetLabel$></a></dt>
-    <dd>
-    <$mt:AssetDescription$>
-      <dl>
-    <mt:VideoCustomFields>
-        <dt><$mt:VideoCustomFieldName$>: <$mt:VideoCustomFieldValue$></dt>
-        <dd><$mt:VideoCustomFieldDescription$></dd>
-    </mt:VideoCustomFields>
-      </dl>
-    </dd>
-    <mt:AssetsFooter>
-  </dl>
-    </mt:AssetsFooter>
-  </mt:Assets>
   <div class="container">
     <h2><img src="<$mt:BlogURL encode_html="1"$>images/main-img.png" alt=""></h2>
     <p id="main-text">Movable Typeデザインテーマ「Simple Corporate」のデモサイトです。<br />
@@ -66,6 +48,11 @@
     </div>
   </div>
 </section>
+<mt:Assets include="video" type="video">
+  <video autoplay="" loop="" muted="" playsinline="">
+    <source src="<$mt:AssetURL$>" type="video/mp4">
+  </video>
+</mt:Assets>
 
 <section id="top-about">
 
