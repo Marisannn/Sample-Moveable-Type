@@ -33,7 +33,18 @@
 <$mt:Include module="header"$>
 
 <section id="mainvisual">
-  <mt:CustomFieldAsset identifier="mv"><mt:AssetURL /></mt:CustomFieldAsset>
+  <mt:Asset id="232839">
+    <a href="<$mt:AssetURL$>"><img src="<$mt:AssetThumbnailURL width="300"$>" /></a>
+    <ul>
+      <li>サイズ: <$mt:AssetProperty property="file_size"$></li>
+      <li>幅: <$mt:AssetProperty property="image_width"$></li>
+      <li>高さ: <$mt:AssetProperty property="image_height"$></li>
+      <li>ラベル: <$mt:AssetProperty property="label"$></li>
+      <li>説明: <$mt:AssetProperty property="description"$></li>
+      <li>投稿者: <$mt:AssetAddedBy$></li>
+      <li>登録日時: <$mt:AssetDateAdded$></li>
+    </ul>
+  </mt:Asset>
   <div class="container">
     <h2><img src="<$mt:BlogURL encode_html="1"$>images/main-img.png" alt=""></h2>
     <p id="main-text">Movable Typeデザインテーマ「Simple Corporate」のデモサイトです。<br />
