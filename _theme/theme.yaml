@@ -46,6 +46,11 @@ elements:
             mappings:
               individual:
                 archive_type: Individual
+          entry:
+            label: 記事(new)
+            mappings:
+              individual:
+                archive_type: Individual
         module:
           header:
             label: header
