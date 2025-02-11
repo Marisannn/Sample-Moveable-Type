@@ -7,6 +7,97 @@ block variables
     ]
 
 block content
-  |TESTING
+  .top
+    .top__mv
+      img.top__mv-logo(src="/public/img/key_title.png")
+      .splide.js-slider
+        .splide__track
+          .splide__list
+            .splide__slide
+              img.top__mv-image.image(src="/public/img/key1.jpg")
+            .splide__slide
+              img.top__mv-image.image(src="/public/img/key2.jpg")
+            .splide__slide
+              img.top__mv-image.image(src="/public/img/key3.jpg")
+    video.top__video.image(autoplay loop muted playsinline)
+      source(src="/public/img/vid.mp4", type="video/mp4")
+    section.top__intro
+      p.top__intro-text ウエスタンカルチャーの全盛期である1947年の創業以来、
+        br
+        |耐久性に優れたデニムをベースにしたアイテムで人気となった〈Wrangler〉。
+        br
+        |これまでアメリカの人々を魅了してきたコレクションは、
+        br
+        |現代の世界的なファッショントレンドである"アメカジ"にも欠かせないもの。
+        br
+        |かつて荒野を切り開いてきたカウボーイとカウガールへの
+        br
+        |オマージュとなるルックが、その証しとなる。
+      p.top__intro-text.top__intro-text--en Founded in 1947, when Western culture was still very much alive,
+        br
+        |Wrangler has gained credibility for our durable, denim-based clothing.
+        br
+        |The collection, which has always captivated Americans,
+        br
+        |is essential to the modern fashion trend called "American Casual."
+        br
+        |A tribute to the cowboys and cowgirls who once blazed the trail,
+        br
+        |the looks were created from the perspective of 2024 in mind.
+    section.top__product
+      .top__product-container.js-popup-container
+        .top__product-left
+          span.top__product-date 1/14
+          .top__product-content
+            .top__product-link.js-popup
+              img.image(src="/public/img/pp1_js1.jpg")
+            .top__product-link-group
+              a.top__link-group(href="") Jacket : ¥30,800
+              a.top__link-group(href="") T-shirt : ¥30,800
+              a.top__link-group(href="") Pants : ¥30,800
+        .top__product-right
+          .top__product-link.top__product-link--large.js-popup
+            img.image(src="/public/img/pp1_js2.jpg")
+        .js-popup-show.top__popup-show
+          img.top__popup-close.js-popup-close(src="/public/img/close.png")
+          .top__popup-container
+            .top__popup-block
+              span.top__popup-date 1/14
+              .top__popup-links
+                a.top__popup-link(href="")
+                  span.top__popup-category Jacket
+                  span.top__popup-subcategory WRANGE COAT
+                  .top__popup-info
+                    p Style No. : WM1823
+                      br
+                      |Color : FLOWER EMBROIDERY
+                      br
+                      |Price : ¥30,800
+                a.top__popup-link(href="")
+                  span.top__popup-category Jacket
+                  span.top__popup-subcategory WRANGE COAT
+                  .top__popup-info
+                    p Style No. : WM1823
+                      br
+                      |Color : FLOWER EMBROIDERY
+                      br
+                      |Price : ¥30,800
+                a.top__popup-link(href="")
+                  span.top__popup-category Jacket
+                  span.top__popup-subcategory WRANGE COAT
+                  .top__popup-info
+                    p Style No. : WM1823
+                      br
+                      |Color : FLOWER EMBROIDERY
+                      br
+                      |Price : ¥30,800
+            .top__popup-block
+              .splide.js-slider-popup.top__popup-slider
+                .splide__track
+                  .splide__list
+                    .splide__slide
+                      img.image(src="/public/img/pp1_js1.jpg")
+                    .splide__slide
+                      img.image(src="/public/img/pp1_js2.jpg")
 block customize_script
   script(src="js/top/index.js")

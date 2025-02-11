@@ -1,0 +1,33 @@
+@use 'settings/color' as color;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  z-index: 1000;
+  background-color: color.$black;
+  border-bottom: 1px solid color.$white;
+
+  &__logo {
+    height: 28px;
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    color: color.$white;
+    display: flex;
+  }
+
+  &__link {
+    padding: 0 30px;
+    font-size: 1.6rem;
+  }
+}

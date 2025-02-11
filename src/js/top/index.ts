@@ -1,9 +1,11 @@
-import test from './components/test';
+import splide from './components/splide';
+import popup from './components/popup';
 
 document.addEventListener(
   'DOMContentLoaded',
   () => {
-    test();
+    splide();
+    popup();
   },
   false
 );

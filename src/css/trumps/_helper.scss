@@ -1,4 +1,4 @@
-@use '../tools/media-queries' as mq;
+@use 'tools/media-queries' as mq;
 
 .overflow {
   overflow: hidden;
@@ -16,4 +16,9 @@
   @include mq.sp {
     display: block;
   }
+}
+
+.container {
+  width: 1100px;
+  margin: 0 auto;
 }

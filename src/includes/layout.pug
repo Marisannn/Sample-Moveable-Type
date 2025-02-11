@@ -28,6 +28,8 @@ html(lang="ja")
     //- --START-- Stylesheets CDNs //
     block cdn_css
     //- --START-- Stylesheets CDNs //
+
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css")
     
     //- --START-- Global Stylesheets //
     link(rel="stylesheet", href="css/main.css")
@@ -38,14 +40,7 @@ html(lang="ja")
     //- --END-- Page Specific Stylesheets //
 
   body
-    header
-      //- Before the header content
-      block before_header
-
-      //- Include global header based files here
-      
-      //- After the header content
-      block after_header
+    include header
 
     main
       //- Before the page content
@@ -57,14 +52,7 @@ html(lang="ja")
       //- After the page content
       block after_content
     
-    footer
-      //- Before the footer content
-      block before_footer
-
-      //- Include global footer based files here
-
-      //- After the footer content
-      block after_footer
+    include footer
     
 
     //- --START-- CDN Scripts //
@@ -73,6 +61,8 @@ html(lang="ja")
     script(src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js", defer)
     block cdn_scripts
     //- --END-- Scripts //
+
+    script(src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js", defer)
 
     //- --START-- Default scripts
     script(src="js/common/index.js", defer)
