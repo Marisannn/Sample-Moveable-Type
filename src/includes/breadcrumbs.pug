@@ -1,0 +1,10 @@
+.breadcrumbs
+  .container
+    .breadcrumbs__list 
+      a.breadcrumbs__link(href="#") HOME
+      if(breadcrumbs)
+        each breadcrumb, key in breadcrumbs
+          if(key === breadcrumbs.length - 1)
+            span.breadcrumbs__text= breadcrumb 
+          else 
+            a.breadcrumbs__link(href="#")= breadcrumb

@@ -7,9 +7,13 @@
 @use 'components/common/image';
 @use 'components/common/header';
 @use 'components/common/footer';
+@use 'components/common/breadcrumbs';
+@use 'components/common/title';
+@use 'components/common/pagination';
 
 // // Page
 @use 'components/pages/top';
+@use 'components/pages/features';
 
 // Trumps
 @use 'trumps/helper';

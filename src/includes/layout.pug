@@ -43,6 +43,8 @@ html(lang="ja")
     include header
 
     main
+      - if (breadcrumbs)
+        include breadcrumbs.pug
       //- Before the page content
       block before_content 
 

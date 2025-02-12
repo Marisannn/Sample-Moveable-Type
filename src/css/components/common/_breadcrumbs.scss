@@ -1,0 +1,32 @@
+@use 'settings/color' as color;
+@use 'settings/font-weight' as fw;
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-top: 90px;
+  font-size: 1.5rem;
+
+  &__link {
+    position: relative;
+    padding: 15px 8px;
+    margin-right: 35px;
+
+    &::before {
+      content: '>';
+      display: inline-block;
+      position: absolute;
+      font-size: 14pt;
+      font-weight: fw.$bold;
+      top: 50%;
+      right: -1.3em;
+      margin-top: 3px;
+      transform: scale(0.8, 1.2) translateY(-50%);
+    }
+  }
+
+  &__text {
+    color: #999;
+    padding: 15px 8px;
+  }
+}

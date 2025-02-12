@@ -1,0 +1,22 @@
+extends includes/layout.pug
+block variables
+  - var page_title = 'FEATURES'
+  - var breadcrumbs = ["FEATURES", 'Wrangler x The Beatles Collection']
+
+block content
+  .container
+    h1.features__single-title Wrangler x The Beatles Collection
+    p.features__text Wranglerジーンズを公私において愛用したJohn Lennon。
+      br
+      |111MJを着用した写真はあまりにも有名だ。
+      br
+      |John LennonだけでなくThe BeatlesのメンバーもWranglerを着用しており、多くの資料が残っている。
+      br
+      |関係性の深いWranglerとThe Beatlesのコラボレーションが実現。
+      br
+      |リンガーTシャツにThe Beatlesのアートワークをプリントしたスペシャルなコレクション。
+    img.features__single-image(src="/public/img/features02.jpg")
+    a.features__button(href="") VIEW MORE
+
+block customize_script
+  script(src="js/lower/index.js")

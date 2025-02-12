@@ -1,0 +1,62 @@
+@use 'settings/color' as color;
+@use 'settings/font-weight' as fw;
+
+.features {
+  &__list {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 20px;
+  }
+
+  &__item {
+    width: 100%;
+    box-shadow: 2px 2px 3px #bbb;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-left: 1px solid #ececec;
+    border-top: 1px solid #ececec;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  &__title {
+    padding: 16px;
+    font-size: 1.6rem;
+  }
+
+  &__single-title {
+    text-align: center;
+    font-size: 2.6rem;
+    margin: 50px 0 30px;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  &__single-image {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  &__button {
+    display: block;
+    font-size: 1.8rem;
+    padding: 18px 30px;
+    width: 425px;
+    margin: 0 auto;
+    text-align: center;
+    border: 3px solid color.$black;
+    font-weight: fw.$bold;
+  }
+}

@@ -1,0 +1,35 @@
+extends includes/layout.pug
+block variables
+  - var page_title = 'FEATURES'
+  - var breadcrumbs = ["FEATURES"]
+
+block content
+  .container__list
+    .title
+      h1.title__text FEATURES
+      span.title__subtitle 注目情報
+    .features__list
+      a.features__item(href="")
+        img.features__image(src="/public/img/features01.jpg")
+        h1.features__title Wrangler
+          br
+          |2024 FALL/WINTER COLLECTION 
+      a.features__item(href="")
+        img.features__image(src="/public/img/features01.jpg")
+        h1.features__title Wrangler
+          br
+          |2024 FALL/WINTER COLLECTION 
+      a.features__item(href="")
+        img.features__image(src="/public/img/features01.jpg")
+        h1.features__title Wrangler
+          br
+          |2024 FALL/WINTER COLLECTION 
+    .pagination
+      span <
+      span 1
+      a(href="") 2
+      a(href="") 3
+      span >
+
+block customize_script
+  script(src="js/lower/index.js")
