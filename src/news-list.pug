@@ -1,0 +1,54 @@
+extends includes/layout.pug
+block variables
+  - var page_title = 'NEWS'
+  - var breadcrumbs = ["NEWS"]
+
+block content
+  .container__list
+    .title
+      h1.title__text NEWS
+      span.title__subtitle 新着情報
+    .news__list
+      a.news__item(href="")
+        img.news__image(src="/public/img/news01.jpg")
+        span.news__date 2024/03/15
+        h1.news__title MIYASHITA PARK オープン1周年。数量限定ノベルティキャンペーンを開催。
+      a.news__item(href="")
+        img.news__image(src="/public/img/news01.jpg")
+        span.news__date 2024/03/15
+        h1.news__title MIYASHITA PARK オープン1周年。数量限定ノベルティキャンペーンを開催。
+      a.news__item(href="")
+        img.news__image(src="/public/img/news01.jpg")
+        span.news__date 2024/03/15
+        h1.news__title MIYASHITA PARK オープン1周年。数量限定ノベルティキャンペーンを開催。
+    .pagination
+      span <
+      span 1
+      a(href="") 2
+      a(href="") 3
+      span >
+
+  .features__splide.splide.js-slider-features
+    .splide__track
+      .splide__list
+        .splide__slide
+          a(href="")
+            img.features__slider-image(src="/public/img/features01.jpg")
+            h1.features__slider-title Wrangler
+              br
+              |2024 FALL/WINTER COLLECTION 
+        .splide__slide
+          a(href="")
+            img.features__slider-image(src="/public/img/features01.jpg")
+            h1.features__slider-title Wrangler
+              br
+              |2024 FALL/WINTER COLLECTION 
+        .splide__slide
+          a(href="")
+            img.features__slider-image(src="/public/img/features01.jpg")
+            h1.features__slider-title Wrangler
+              br
+              |2024 FALL/WINTER COLLECTION 
+
+block customize_script
+  script(src="js/lower/index.js")

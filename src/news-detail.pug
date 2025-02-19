@@ -1,0 +1,21 @@
+extends includes/layout.pug
+block variables
+  - var page_title = 'NEWS'
+  - var breadcrumbs = ["NEWS", 'MIYASHITA PARK オープン1周年。数量限定ノベルティキャンペーンを開催。']
+
+block content
+  .container__secondary
+    .title
+      h1.title__text NEWS
+      span.title__subtitle 新着情報
+    span.news__date.news__date--single 2024/03/15
+    h1.news__single-title MIYASHITA PARK オープン1周年。数量限定ノベルティキャンペーンを開催。
+    p.features__text.news__text 「Wrangler STORE RAYARD MIYASHITA PARK店」が2024年3月17日（日）にオープン1周年を迎えます。
+      br
+      |1周年を記念し、2024年3月16日（土）より13,200円（税込）以上お買い上げの方に先着でオリジナルトートバッグをプレゼント。
+    img.features__single-image(src="/public/img/features02.jpg")
+    a.features__button(href="") SHOP詳細
+    a.news__button(href="") 一覧へ戻る
+
+block customize_script
+  script(src="js/lower/index.js")

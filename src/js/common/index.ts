@@ -1,9 +1,9 @@
-import test from './components/test';
+import splide from './components/splide';
 
 document.addEventListener(
   'DOMContentLoaded',
   () => {
-    test();
+    splide();
   },
   false
 );
