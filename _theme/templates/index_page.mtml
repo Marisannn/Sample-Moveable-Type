@@ -36,16 +36,15 @@
 <$mt:Include module="header"$>
 
 <main>
-  <$mt:PageBody$>
   <div class="top">
     <div class="top__mv">
       <img class="top__mv-logo" src="<$mt:BlogURL encode_html="1"$>images/key_title.png">
       <div class="splide js-slider">
         <div class="splide__track">
           <div class="splide__list">
-            <mt:Assets type="image" include="mv" tag="mv" sort_by="file_name">
-              <div class="splide__slide"><img class="top__mv-image image" src="<mt:AssetUrl />" alt="<mt:AssetLabel />"></div>
-            </mt:Assets>
+            <mt:ImageCustomFields include="mv1, mv2, mv3">
+              <$mt:CustomFieldName$>
+            </mt:ImageCustomFields>
           </div>
         </div>
       </div>
