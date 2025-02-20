@@ -32,12 +32,10 @@
 <mt:SetVarBlock name="thispage">TOP</mt:SetVarBlock>
 
 <body>
-<script>
-  window.location.href = "https://sample-upward.movabletype.io/main_page.html";
-</script>
 <$mt:Include module="header"$>
 
 <main>
+  <$mt:PageBody$>
   <div class="top">
     <div class="top__mv">
       <img class="top__mv-logo" src="<$mt:BlogURL encode_html="1"$>images/key_title.png">
