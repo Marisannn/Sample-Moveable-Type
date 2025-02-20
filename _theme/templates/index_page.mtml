@@ -35,24 +35,30 @@
 
 <$mt:Include module="header"$>
 
-<mt:BlockEditorBlocks name="content">
-<mt:If name="type" eq="mt-image">
-<a href="<mt:Var name="meta{assetUrl}" />">Open file</a>
-<mt:Else>
-<mt:Var name="__value__" />
-</mt:If>
-</mt:BlockEditorBlocks>
-
 <main>
+  <mt:BlockEditorBlocks name="content">
+  <mt:If name="type" eq="mt-image">
+  <mt:BlockEditorBlockAsset>
+  <amp-img alt="<mt:AssetLabel />"
+    src="<mt:AssetUrl />"
+    width="<mt:AssetProperty property="image_width" />"
+    height="<mt:AssetProperty property="image_height" />"
+    layout="responsive">
+  </amp-img>
+  </mt:BlockEditorBlockAsset>
+  <mt:Else>
+  <mt:Var name="__value__" />
+  </mt:If>
+  </mt:BlockEditorBlocks>
   <div class="top">
     <div class="top__mv">
       <img class="top__mv-logo" src="<$mt:BlogURL encode_html="1"$>images/key_title.png">
       <div class="splide js-slider">
         <div class="splide__track">
           <div class="splide__list">
-            // <mt:Assets include="mv">
-            //   <div class="splide__slide"><img class="top__mv-image image" src="<mt:AssetUrl />" alt="<mt:AssetLabel />"></div>
-            // </mt:Assets>
+            <mt:Assets type="image" include="mv" tag="mv" sort_by="file_name">
+              <div class="splide__slide"><img class="top__mv-image image" src="<mt:AssetUrl />" alt="<mt:AssetLabel />"></div>
+            </mt:Assets>
           </div>
         </div>
       </div>
