@@ -28,10 +28,10 @@ elements:
             label: 最新記事のフィード
             outfile: atom.xml
             rebuild_me: 1
-          index_page:
-            label: インデックスページ
-            outfile: index.html
-            rebuild_me: 1
+          # index_page:
+          #   label: インデックスページ
+          #   outfile: index.html
+          #   rebuild_me: 1
           main_index:
             label: 'ニュース TOP'
             outfile: news.html
