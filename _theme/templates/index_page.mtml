@@ -42,15 +42,9 @@
       <div class="splide js-slider">
         <div class="splide__track">
           <div class="splide__list">
-            <mt:BlockEditorBlocks name="mv">
-              <mt:If name="type" eq="mt-image">
-                <mt:BlockEditorBlockAsset>
-                  <div class="splide__slide"><img class="top__mv-image image" src="<mt:AssetUrl />" alt="<mt:AssetLabel />"></div>
-                </mt:BlockEditorBlockAsset>
-              <mt:Else>
-                <mt:Var name="__value__" />
-              </mt:If>
-            </mt:BlockEditorBlocks>
+            <mt:Assets include="mv">
+              <div class="splide__slide"><img class="top__mv-image image" src="<mt:AssetUrl />" alt="<mt:AssetLabel />"></div>
+            </mt:Assets>
           </div>
         </div>
       </div>
