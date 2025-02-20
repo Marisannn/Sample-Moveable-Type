@@ -35,7 +35,9 @@
 <$mt:Include module="header"$>
 
 <main>
-  <$mt:PageBody$>
+  <mt:ImageCustomFields include="mv1, mv2, mv3">
+    <$mt:CustomFieldName$>
+  </mt:ImageCustomFields>
   <div class="top">
     <div class="top__mv">
       <img class="top__mv-logo" src="<$mt:BlogURL encode_html="1"$>images/key_title.png">
