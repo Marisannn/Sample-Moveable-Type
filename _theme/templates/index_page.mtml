@@ -35,9 +35,16 @@
 <$mt:Include module="header"$>
 
 <main>
+  <mt:Page id="2879571">
+    <img src="<mt:PageCustomField name='mv1'>" alt="Custom Image">
+  </mt:Page>
   <mt:Pages limit="1">
     <h2><mt:PageTitle></h2>
-    <p><mt:PageCustomField name="mv1"></p>
+    <p><mt:PageBody></p>
+
+    <mt:If tag="PageCustomField name='mv1'">
+      <img src="<mt:PageCustomField name='mv1'>" alt="Custom Image">
+    </mt:If>
   </mt:Pages>
   <div class="top">
     <div class="top__mv">
