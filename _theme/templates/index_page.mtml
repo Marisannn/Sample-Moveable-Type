@@ -32,7 +32,9 @@
 <mt:SetVarBlock name="thispage">TOP</mt:SetVarBlock>
 
 <body>
-
+<script>
+  window.location.href = "https://sample-upward.movabletype.io/main_page.html";
+</script>
 <$mt:Include module="header"$>
 
 <main>
@@ -42,9 +44,21 @@
       <div class="splide js-slider">
         <div class="splide__track">
           <div class="splide__list">
-            <mt:ImageCustomFields include="mv1, mv2, mv3">
-              <$mt:CustomFieldName$>
-            </mt:ImageCustomFields>
+            <mt:Assets include="mv1">
+              <div class="item" id="<$mt:AssetID$>">
+                <img src="<$mt:AssetURL$>" class="mv" alt="<$mt:AssetLabel$>" title="<$mt:AssetLabel$>" />
+              </div>
+            </mt:Assets>
+            <mt:Assets include="mv2">
+              <div class="item" id="<$mt:AssetID$>">
+                <img src="<$mt:AssetURL$>" class="mv" alt="<$mt:AssetLabel$>" title="<$mt:AssetLabel$>" />
+              </div>
+            </mt:Assets>
+            <mt:Assets include="mv3">
+              <div class="item" id="<$mt:AssetID$>">
+                <img src="<$mt:AssetURL$>" class="mv" alt="<$mt:AssetLabel$>" title="<$mt:AssetLabel$>" />
+              </div>
+            </mt:Assets>
           </div>
         </div>
       </div>
