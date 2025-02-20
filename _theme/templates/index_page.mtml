@@ -33,30 +33,13 @@
 
 <body>
 
-<$mt:Include module="header"$>
-<mt:BlockEditorBlocks name="content">
+<mt:BlockEditorBlocks name="mv">
 <mt:If name="type" eq="mt-image">
-<mt:BlockEditorBlockAsset>
-<amp-img alt="<mt:AssetLabel />"
-  src="<mt:AssetUrl />"
-  width="<mt:AssetProperty property="image_width" />"
-  height="<mt:AssetProperty property="image_height" />"
-  layout="responsive">
-</amp-img>
-</mt:BlockEditorBlockAsset>
+<a href="<mt:Var name="meta{assetUrl}" />">Open file</a>
 <mt:Else>
 <mt:Var name="__value__" />
 </mt:If>
 </mt:BlockEditorBlocks>
-
-コンテンツデータのフィールドを対象にする場合の使い方
-<mt:Contents content_type="画像" limit="1">
-  <mt:ContentField content_field="mv">
-    <mt:BlockEditorBlocks tag="mv">
-      <mt:Var name="__value__" />
-    </mt:BlockEditorBlocks>
-  </mt:ContentField>
-</mt:Contents>
 
 <main>
   <div class="top">
