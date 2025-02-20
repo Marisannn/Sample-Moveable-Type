@@ -6,7 +6,6 @@
 <meta name="description" content="<$mt:BlogDescription remove_html="1" encede_html="1"$>">
 <meta name="keywords" content="<$mt:GetVar name="metakeywords"$>">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="shortcut icon" href="<$mt:BlogURL encode_html="1"$>images/favicon.ico">
 <link rel="start" href="<$mt:BlogURL encode_html="1"$>">
 <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="<$mt:Link template="feed_recent"$>">
 <$mt:CanonicalLink$>
@@ -18,6 +17,10 @@
 <meta property="og:description" content="<$mt:BlogDescription remove_html="1" encede_html="1"$>">
 <meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
 <meta property="og:image" content="<$mt:BlogURL encode_html="1"$>images/ogimage.png">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
 <!-- Microdata -->
 <meta itemprop="description" content="<$mt:BlogDescription remove_html="1" encede_html="1"$>">
 <link itemprop="url" href="<$mt:BlogURL encode_html="1"$>">
@@ -28,9 +31,32 @@
 
 <mt:SetVarBlock name="thispage">TOP</mt:SetVarBlock>
 
-<body id="sitetop">
+<body>
 
 <$mt:Include module="header"$>
+
+<main>
+  <div class="top">
+    <div class="top__mv">
+      <img class="top__mv-logo" src="<$mt:BlogURL encode_html="1"$>images/key_title.png">
+      <div class="splide js-slider">
+        <div class="splide__track">
+          <div class="splide__list">
+            <mt:BlockEditorBlocks name="mv">
+              <mt:If name="type" eq="mt-image">
+                <mt:BlockEditorBlockAsset>
+                  <div class="splide__slide"><img class="top__mv-image image" src="<mt:AssetUrl />" alt="<mt:AssetLabel />"></div>
+                </mt:BlockEditorBlockAsset>
+              <mt:Else>
+                <mt:Var name="__value__" />
+              </mt:If>
+            </mt:BlockEditorBlocks>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
 <section id="mainvisual">
   <mt:Assets include="mv">
@@ -104,13 +130,7 @@
 <$mt:Include module="footer"$>
 
 <$mt:Include module="common_bottom_js"$>
-<script src="<$mt:BlogRelativeURL$>js/jquery.tile.min.js"></script>
-<script type="application/javascript">
-$(window).load(function() {
-  $('#top-news .col-sm-3').tile(4);
-  $('.webpages .col-sm-4').tile(3);
-});
-</script>
+<script src="<$mt:BlogRelativeURL$>js/top/index.js"></script>
 
 </body>
 </html>
