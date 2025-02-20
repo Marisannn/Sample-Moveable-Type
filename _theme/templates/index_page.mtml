@@ -33,7 +33,9 @@
 
 <body>
 
-<mt:BlockEditorBlocks name="mv">
+<$mt:Include module="header"$>
+
+<mt:BlockEditorBlocks name="content">
 <mt:If name="type" eq="mt-image">
 <a href="<mt:Var name="meta{assetUrl}" />">Open file</a>
 <mt:Else>
