@@ -35,23 +35,6 @@
 <$mt:Include module="header"$>
 
 <main>
-  <div class="top__mv">
-  <img class="top__mv-logo" src="<mt:StaticWebPath>/public/img/key_title.png">
-  <div class="splide js-slider">
-    <div class="splide__track">
-      <div class="splide__list">
-        <mt:SetVarBlock name="custom_slider"><mt:EntryCustomField name="slider_images"></mt:SetVarBlock>
-        <mt:If name="custom_slider">
-          <mt:Assets tag="slider_images">
-            <div class="splide__slide">
-              <img class="top__mv-image image" src="<mt:AssetURL>" alt="<mt:AssetLabel>">
-            </div>
-          </mt:Assets>
-        </mt:If>
-      </div>
-    </div>
-  </div>
-</div>
   <div class="top">
     <div class="top__mv">
       <img class="top__mv-logo" src="<$mt:BlogURL encode_html="1"$>images/key_title.png">
