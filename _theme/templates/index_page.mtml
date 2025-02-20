@@ -35,6 +35,13 @@
 <$mt:Include module="header"$>
 
 <main>
+  <mt:ImageCustomFields>
+    <ul>
+      <mt:IfNonEmpty tag="CustomFieldValue">
+      <li><$mt:CustomFieldName$>: <$mt:CustomFieldValue$></li>
+      </mt:IfNonEmpty>
+    </ul>
+  </mt:ImageCustomFields>
   <mt:ImageCustomFields include="mv1, mv2, mv3">
     <$mt:CustomFieldName$>
   </mt:ImageCustomFields>
