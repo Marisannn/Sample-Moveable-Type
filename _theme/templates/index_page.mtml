@@ -34,6 +34,29 @@
 <body>
 
 <$mt:Include module="header"$>
+<mt:BlockEditorBlocks name="content">
+<mt:If name="type" eq="mt-image">
+<mt:BlockEditorBlockAsset>
+<amp-img alt="<mt:AssetLabel />"
+  src="<mt:AssetUrl />"
+  width="<mt:AssetProperty property="image_width" />"
+  height="<mt:AssetProperty property="image_height" />"
+  layout="responsive">
+</amp-img>
+</mt:BlockEditorBlockAsset>
+<mt:Else>
+<mt:Var name="__value__" />
+</mt:If>
+</mt:BlockEditorBlocks>
+
+コンテンツデータのフィールドを対象にする場合の使い方
+<mt:Contents content_type="イベント・セミナー" limit="1">
+  <mt:ContentField content_field="開催概要">
+    <mt:BlockEditorBlocks tag="mv">
+      <mt:Var name="__value__" />
+    </mt:BlockEditorBlocks>
+  </mt:ContentField>
+</mt:Contents>
 
 <main>
   <div class="top">
@@ -42,9 +65,16 @@
       <div class="splide js-slider">
         <div class="splide__track">
           <div class="splide__list">
-            <mt:Assets include="mv">
-              <div class="splide__slide"><img class="top__mv-image image" src="<mt:AssetUrl />" alt="<mt:AssetLabel />"></div>
-            </mt:Assets>
+            // <mt:Assets include="mv">
+            //   <div class="splide__slide"><img class="top__mv-image image" src="<mt:AssetUrl />" alt="<mt:AssetLabel />"></div>
+            // </mt:Assets>
+            <mt:Contents content_type="mv" limit="1">
+              <mt:ContentField content_field="開催概要">
+                <mt:BlockEditorBlocks tag="mv">
+                  <mt:Var name="__value__" />
+                </mt:BlockEditorBlocks>
+              </mt:ContentField>
+            </mt:Contents>
           </div>
         </div>
       </div>
@@ -124,6 +154,7 @@
 <$mt:Include module="footer"$>
 
 <$mt:Include module="common_bottom_js"$>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
 <script src="<$mt:BlogRelativeURL$>js/top/index.js"></script>
 
 </body>
