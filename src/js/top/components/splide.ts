@@ -18,6 +18,7 @@ const splide = () => {
       pauseOnHover: false,
       pauseOnFocus: false,
       autoplay: true,
+      rewind: true,
     });
 
     slider.mount();
@@ -35,6 +36,7 @@ const splide = () => {
       pauseOnHover: false,
       pauseOnFocus: false,
       autoplay: true,
+      rewind: true,
     });
 
     sliderPopup.mount();
