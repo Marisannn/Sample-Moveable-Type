@@ -36,17 +36,7 @@
 <$mt:Include module="header"$>
 
 <main>
-  <$mt:EntryBody$>
-  <mt:BlockEditorBlocks tag="EntryBody">
-  <mt:If name="type" eq="custom-mv">
-    <mt:BlockEditorBlocks>
-      <mt:If name="type" eq="mt-image"><mt:SetVarBlock name="img"><mt:BlockEditorBlockAsset><img src="<mt:AssetURL />" alt="<mt:Var name="__value__" regex_replace='/.*alt="([^"]*).*/',"\1" />" width="<mt:AssetProperty property="image_width" />" height="<mt:AssetProperty property="image_height" />" /></mt:BlockEditorBlockAsset></mt:SetVarBlock></mt:If>
-    </mt:BlockEditorBlocks>
-    <a href="<mt:Var name="href" encode_html="1" />"><mt:Var name="img" /></a>
-  <mt:Else>
-    <mt:Var name="__value__" />
-  </mt:If>
-  </mt:BlockEditorBlocks>
+  <$mt:PageBody$>
   <div class="top">
     <div class="top__mv">
       <img class="top__mv-logo" src="<$mt:BlogURL encode_html="1"$>images/key_title.png">
