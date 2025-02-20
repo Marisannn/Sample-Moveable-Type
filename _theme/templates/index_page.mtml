@@ -35,16 +35,10 @@
 <$mt:Include module="header"$>
 
 <main>
-  <mt:ImageCustomFields>
-    <ul>
-      <mt:IfNonEmpty tag="CustomFieldValue">
-      <li><$mt:CustomFieldName$>: <$mt:CustomFieldValue$></li>
-      </mt:IfNonEmpty>
-    </ul>
-  </mt:ImageCustomFields>
-  <mt:ImageCustomFields include="mv1, mv2, mv3">
-    <$mt:CustomFieldName$>
-  </mt:ImageCustomFields>
+  <mt:Pages limit="1">
+    <h2><mt:PageTitle></h2>
+    <p><mt:PageCustomField name="mv1"></p>
+  </mt:Pages>
   <div class="top">
     <div class="top__mv">
       <img class="top__mv-logo" src="<$mt:BlogURL encode_html="1"$>images/key_title.png">
