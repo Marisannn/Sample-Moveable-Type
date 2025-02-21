@@ -24,22 +24,24 @@ const splide = () => {
     slider.mount();
   }
 
-  const splidePopup = document.querySelector('.js-slider-popup');
+  const splidePopup = document.querySelectorAll('.js-slider-popup');
 
   if (splidePopup) {
-    const sliderPopup = new Splide( splidePopup, {
-      type: 'fade',
-      fixedWidth: 506,
-      fixedHeight: 781,
-      focus: 'center',
-      arrows: false,
-      pauseOnHover: false,
-      pauseOnFocus: false,
-      autoplay: true,
-      rewind: true,
+    splidePopup.forEach(item => {
+      const sliderPopup = new Splide( item, {
+        type: 'fade',
+        fixedWidth: 506,
+        fixedHeight: 781,
+        focus: 'center',
+        arrows: false,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        autoplay: true,
+        rewind: true,
+      });
+  
+      sliderPopup.mount();
     });
-
-    sliderPopup.mount();
   }
 };
 

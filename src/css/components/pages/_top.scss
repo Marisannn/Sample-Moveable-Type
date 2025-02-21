@@ -21,6 +21,7 @@
   }
 
   &__intro {
+    display: block !important;
     padding: 90px 0;
     text-align: center;
   }
@@ -36,7 +37,7 @@
 
   &__product {
     max-width: 1620px;
-    margin: auto;
+    margin: 0 auto 150px;
   }
 
   &__product-container {
