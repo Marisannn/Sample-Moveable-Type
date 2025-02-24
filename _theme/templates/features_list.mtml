@@ -2,13 +2,12 @@
 <html lang="<$mt:BlogLanguage$>" itemscope itemtype="http://schema.org/WebPage">
 <head>
 <meta charset="<$mt:PublishCharset$>">
-<title>ニュース | <$mt:BlogName encode_html="1"$></title>
+<title>NEWS | <$mt:BlogName encode_html="1"$></title>
 <meta name="description" content="<$mt:BlogDescription encode_html="1" remove_html="1"$>">
 <meta name="keywords" content="<$mt:GetVar name="metakeywords"$>">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="shortcut icon" href="<$mt:BlogURL encode_html="1"$>images/favicon.ico">
 <link rel="start" href="<$mt:BlogURL encode_html="1"$>">
-<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="<$mt:Link template="feed_recent"$>">
 <$mt:CanonicalLink$>
 <!-- Open Graph Protocol -->
 <meta property="og:type" content="article">
@@ -31,47 +30,25 @@
 
 <$mt:Include module="header"$>
 
-<section id="localnavi">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <nav role="navigation" class="breadcrumb">
-          <ul class="clearfix">
-            <li class="home"><a href="<$mt:BlogRelativeURL$>"><i class="fa fa-home fa-lg"></i></a></li>
-            <li><span>ニュース</span></li>
-          </ul>
-        </nav>
+<main>
+  <div class="breadcrumbs">
+    <div class="container">
+      <div class="breadcrumbs__list">
+        <a class="breadcrumbs__link" href="../../">HOME</a>
+        <span class="breadcrumbs__text">FEATURES</span>
       </div>
     </div>
   </div>
-</section>
-
-<section id="mainvisual-lower">
-  <div class="overray"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2><i class="fa fa-book"></i>ニュース</h2>
-      </div>
+  <div class="container__list">
+    <div class="title">
+      <h1 class="title__text">FEATURES</h1><span class="title__subtitle">注目情報</span>
     </div>
-  </div>
-</section>
-
-<div id="content">
-  <div class="container">
-    <div class="row-fluid">
-      <div class="col-sm-9" id="blog-primary-content">
-        <div id="entry-list">
-<$mt:Include module="entry-list"$>
-        </div>
-        <div class="holder"></div>
-      </div><!-- /primary-content -->
-      <aside class="col-sm-3 pull-right" id="sidebar">
-<$mt:Include module="blog-sidemenu"$>
-      </aside><!-- sidebar -->
+    <div class="features__list">
+      <$mt:Include module="entry-list"$>
     </div>
+    <div class="pagination"><span><</span><span>1</span><a href="">2</a><a href="">3</a><span>></span></div>
   </div>
-</div>
+</main>
 
 <$mt:Include module="footer"$>
 
