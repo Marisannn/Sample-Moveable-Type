@@ -32,9 +32,13 @@ elements:
           #   label: インデックスページ
           #   outfile: index.html
           #   rebuild_me: 1
-          main_index:
-            label: 'ニュース TOP'
-            outfile: news.html
+          # main_index:
+          #   label: 'ニュース TOP'
+          #   outfile: news.html
+          #   rebuild_me: 1
+          features_list:
+            label: 'FEATURES'
+            outfile: features.html
             rebuild_me: 1
           styles:
             label: スタイルシート
@@ -42,12 +46,12 @@ elements:
             rebuild_me: 1
         individual:
           entry:
-            label: 記事
+            label: FEATURES
             mappings:
               individual:
                 archive_type: Individual
           entry:
-            label: 記事(new)
+            label: FEATURES(new)
             mappings:
               individual:
                 archive_type: Individual
