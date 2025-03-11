@@ -2,7 +2,7 @@
 <html lang="<$mt:BlogLanguage$>" itemscope itemtype="http://schema.org/WebPage">
 <head>
 <meta charset="<$mt:PublishCharset$>">
-<title>NEWS | <$mt:BlogName encode_html="1"$></title>
+<title>FEATURES | <$mt:BlogName encode_html="1"$></title>
 <meta name="description" content="<$mt:BlogDescription encode_html="1" remove_html="1"$>">
 <meta name="keywords" content="<$mt:GetVar name="metakeywords"$>">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -30,46 +30,52 @@
 
 <$mt:Include module="header"$>
 
-<section id="localnavi">
+<div class="breadcrumbs">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <nav role="navigation" class="breadcrumb">
-          <ul class="clearfix">
-            <li class="home"><a href="<$mt:BlogRelativeURL$>"><i class="fa fa-home fa-lg"></i></a></li>
-            <li><span>ニュース</span></li>
-          </ul>
-        </nav>
-      </div>
+    <div class="breadcrumbs__list">
+      <a class="breadcrumbs__link" href="<$mt:BlogRelativeURL$>">HOME</a><span class="breadcrumbs__text">FEATURES</span>
     </div>
   </div>
-</section>
+</div>
 
-<section id="mainvisual-lower">
-  <div class="overray"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2><i class="fa fa-book"></i>ニュース</h2>
-      </div>
-    </div>
+<div class="container__list">
+  <div class="title">
+    <h1 class="title__text">FEATURES</h1><span class="title__subtitle">注目情報</span>
   </div>
-</section>
-
-<div id="content">
-  <div class="container">
-    <div class="row-fluid">
-      <div class="col-sm-9" id="blog-primary-content">
-        <div id="entry-list">
-<$mt:Include module="entry-list"$>
+  <!-- MTEntries -->
+  <mt:PageContents count="1">
+    <mt:Entries lastn="0">
+      <mt:PageContentsHeader>
+        <div class="features__list">
+      </mt:PageContentsHeader>
+        <a class="features__item" href="<$mt:EntryPermalink$>">
+          <mt:EntryAssets type="image" sort_order="ascend" limit="1">
+            <img class="features__image" src="<$mt:AssetThumbnailURL$>">
+          </mt:EntryAssets>
+          <h1 class="features__title"><$mt:EntryTitle$></h1>
+        </a>
+        <mt:PageContentsFooter>
         </div>
-        <div class="holder"></div>
-      </div><!-- /primary-content -->
-      <aside class="col-sm-3 pull-right" id="sidebar">
-<$mt:Include module="blog-sidemenu"$>
-      </aside><!-- sidebar -->
-    </div>
+      </mt:PageContentsFooter>
+      <$mt:PageSeparator$>
+    </mt:Entries>
+  </mt:PageContents>
   </div>
+  <mt:Pagination>
+    <mt:PaginationHeader>
+      <div class="pagination">
+        <mt:IfPaginationPrev><a href="<$mt:PaginationPrev$>" rel="prev"><</a></mt:IfPaginationPrev>
+        </mt:PaginationHeader>
+        <mt:IfPaginationCurrent>
+          <span><$mt:PaginationLink element="number"$></span>
+        <mt:Else>
+          <a href="<$mt:PaginationLink$>"><$mt:PaginationLink element="number"$></a>
+        </mt:IfPaginationCurrent>
+        <mt:PaginationFooter>
+          <mt:IfPaginationNext><a href="<mt:PaginationNext$>" rel="next">></a></mt:IfPaginationNext>
+      </div>
+    </mt:PaginationFooter>
+  </mt:Pagination>
 </div>
 
 <$mt:Include module="footer"$>

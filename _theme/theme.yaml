@@ -1,10 +1,24 @@
-id: simplecorporateNEW
+id: upwardtheme
+label: 'Upward Theme'
+name: 'Upward Theme'
+version: '1.03'
+author_link: 'http://www.movabletype.org/'
+author_name: 'Six Apart Ltd.'
+class: 'blog'
+description: <__trans phrase="__DESCRIPTION">
+protected: 1
+l10n_lexicon:
+  en_us: l10n_en_us.yaml
+  ja: l10n_ja.yaml
+thumbnail_file: 'thumb.png'
+thumbnail_file_medium: 'thumb-medium.png'
+thumbnail_file_small: 'thumb-small.png'
 elements:
   blog_static_files:
     component: ~
     data:
-      - images
       - js
+      - images
     importer: blog_static_files
   template_set:
     component: ~
@@ -33,8 +47,8 @@ elements:
           #   outfile: index.html
           #   rebuild_me: 1
           main_index:
-            label: 'ニュース TOP'
-            outfile: news.html
+            label: 'FEATURES TOP'
+            outfile: features.html
             rebuild_me: 1
           styles:
             label: スタイルシート
@@ -74,3 +88,4 @@ elements:
             mappings:
               page:
                 archive_type: Page
+    importer: template_set
