@@ -26,17 +26,17 @@ elements:
       base_path: templates
       label: 'exported_template set'
       templates:
-        archive:
-          category_entry_listing:
-            label: カテゴリ別記事リスト
-            mappings:
-              category:
-                archive_type: Category
-          yearly_entry_listing:
-            label: 年別ブログ記事リスト
-            mappings:
-              yearly:
-                archive_type: Yearly
+        # archive:
+        #   category_entry_listing:
+        #     label: カテゴリ別記事リスト
+        #     mappings:
+        #       category:
+        #         archive_type: Category
+        #   yearly_entry_listing:
+        #     label: 年別ブログ記事リスト
+        #     mappings:
+        #       yearly:
+        #         archive_type: Yearly
         index:
           feed_recent:
             label: 最新記事のフィード
@@ -68,10 +68,8 @@ elements:
         module:
           header:
             label: header
-          blog-sidemenu:
-            label: blog-sidemenu
-          entry-list:
-            label: entry-list
+          # blog-sidemenu:
+          #   label: blog-sidemenu
           config:
             label: config
           common_stylesheet:
