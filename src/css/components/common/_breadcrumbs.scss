@@ -28,5 +28,9 @@
   &__text {
     color: #999;
     padding: 15px 8px;
+
+    br {
+      display: none;
+    }
   }
 }

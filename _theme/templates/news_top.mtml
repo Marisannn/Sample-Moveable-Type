@@ -32,27 +32,58 @@
 <mt:SetVarBlock name="thispage">TOP</mt:SetVarBlock>
 
 <body>
+<$mt:Include module="header"$>
 
-<div class="features__splide splide js-slider-features" style="margin: 0 !important;">
-  <div class="splide__track">
-    <mt:Entries lastn="10">
-    <mt:EntriesHeader>
-    <div class="splide__list">
-    </mt:EntriesHeader>
-      <div class="splide__slide">
-        <a href="<$mt:EntryPermalink$>" target="_blank">
-          <mt:EntryAssets type="image" sort_order="ascend" limit="1">
-            <img class="features__slider-image" src="<$mt:AssetThumbnailURL$>">
-          </mt:EntryAssets>
-          <h1 class="features__slider-title"><$mt:EntryTitle$></h1>
-        </a>
-      </div>
-    <mt:EntriesFooter>
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs__list"> <a class="breadcrumbs__link" href="/">HOME</a><span class="breadcrumbs__text">NEWS</span>
     </div>
-    </mt:EntriesFooter>
-    </mt:Entries>
   </div>
 </div>
+
+<div class="container__list">
+  <div class="title">
+    <h1 class="title__text">NEWS</h1><span class="title__subtitle">新着情報</span>
+  </div>
+  <!-- MTEntries -->
+  <mt:PageContents count="1">
+    <mt:Entries lastn="0">
+      <mt:PageContentsHeader>
+        <div class="news__list">
+      </mt:PageContentsHeader>
+        <a class="news__item" href="<$mt:EntryPermalink$>">
+          <mt:EntryAssets type="image" sort_order="ascend" limit="1">
+            <img class="news__image" src="<$mt:AssetThumbnailURL$>">
+          </mt:EntryAssets>
+          <span class="news__date"><time datetime="<mt:EntryDate format_name="iso8601">"><__trans phrase="[_1]/[_2]/[_3]" params="<mt:entrydate format="%Y">%%<mt:entrydate format="%m">%%<mt:entrydate format="%d">"></span></time></span>
+          <h1 class="features__title"><$mt:EntryTitle$></h1>
+        </a>
+        <mt:PageContentsFooter>
+        </div>
+      </mt:PageContentsFooter>
+      <$mt:PageSeparator$>
+    </mt:Entries>
+  </mt:PageContents>
+  </div>
+  <mt:Pagination>
+    <mt:PaginationHeader>
+      <div class="pagination">
+        <mt:IfPaginationPrev><a href="<$mt:PaginationPrev$>" rel="prev"><</a></mt:IfPaginationPrev>
+        </mt:PaginationHeader>
+        <mt:IfPaginationCurrent>
+          <span><$mt:PaginationLink element="number"$></span>
+        <mt:Else>
+          <a href="<$mt:PaginationLink$>"><$mt:PaginationLink element="number"$></a>
+        </mt:IfPaginationCurrent>
+        <mt:PaginationFooter>
+          <mt:IfPaginationNext><a href="<mt:PaginationNext$>" rel="next">></a></mt:IfPaginationNext>
+      </div>
+    </mt:PaginationFooter>
+  </mt:Pagination>
+</div>
+<iframe src="https://mttest.upward-test2.info/news.html" class="features__splide" style="height: 460px; width: 100%; padding: 0; border: 0;"></iframe>
+
+<$mt:Include module="footer"$>
 
 <$mt:Include module="common_bottom_js"$>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>

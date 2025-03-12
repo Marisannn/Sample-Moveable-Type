@@ -32,50 +32,20 @@
 
 <$mt:Include module="header"$>
 
-<section id="localnavi">
+<div class="breadcrumbs">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <nav role="navigation" class="breadcrumb">
-          <ul class="clearfix">
-            <li class="home"><a href="<$mt:BlogRelativeURL$>"><i class="fa fa-home fa-lg"></i></a></li>
-            <li><a href="<$mt:BlogRelativeURL$>news.html">ニュース</a></li>
-            <li><span><$mt:EntryTitle$></span></li>
-          </ul>
-        </nav>
-      </div>
+    <div class="breadcrumbs__list">
+      <a class="breadcrumbs__link" href="<$mt:BlogRelativeURL$>">HOME</a>
+      <a class="breadcrumbs__link" href="<$mt:BlogRelativeURL$>features.html">FEATURES</a>
+      <span class="breadcrumbs__text"><$mt:EntryTitle$></span>
     </div>
   </div>
-</section>
+</div>
 
-<section id="mainvisual-lower">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h2><i class="fa fa-book"></i>ニュース</h2>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div id="content">
-  <div class="container">
-    <div class="row-fluid">
-      <div class="col-sm-9" id="blog-primary-content">
-        <article id="entry-detail">
-          <div class="entry-meta">
-            <time datetime="<$mt:EntryDate format="%Y-%m-%d"$>"><span class="year"><$mt:EntryDate format="%Y"$>年</span><span class="monthday"><$mt:EntryDate format="%b月%e日"$></span></time>
-            <mt:EntryCategories type="primary"><a href="<$mt:CategoryArchiveLink$>" class="category"><$mt:CategoryLabel$></a></mt:EntryCategories>
-          </div>
-          <h1 class="entrytitle"><$mt:EntryTitle$></h1>
-          <div id="entry-body">
-            <$mt:EntryBody$>
-            <$mt:EntryMore$>
-          </div>
-        </article>
-      </div><!-- /primary-content -->
-    </div>
-  </div>
+<div class="container">
+  <h1 class="features__single-title"><$mt:EntryTitle$></h1>
+  <$mt:EntryBody$>
+  <$mt:EntryMore$>
 </div>
 
 <$mt:Include module="footer"$>
