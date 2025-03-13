@@ -55,7 +55,7 @@
           <mt:EntryAssets type="image" sort_order="ascend" limit="1">
             <img class="news__image" src="<$mt:AssetThumbnailURL$>">
           </mt:EntryAssets>
-          <span class="news__date"><time datetime="<mt:EntryDate format_name="iso8601">"><__trans phrase="[_1]/[_2]/[_3]" params="<mt:entrydate format="%Y">%%<mt:entrydate format="%m">%%<mt:entrydate format="%d">"></span></time></span>
+          <span class="news__date"><time datetime="<mt:EntryDate format_name="iso8601">"><mt:entrydate format="%Y">/<mt:entrydate format="%m">/<mt:entrydate format="%d"></span></time></span>
           <h1 class="features__title"><$mt:EntryTitle$></h1>
         </a>
         <mt:PageContentsFooter>
@@ -81,12 +81,89 @@
     </mt:PaginationFooter>
   </mt:Pagination>
 </div>
-<iframe src="https://mttest.upward-test2.info/news.html" class="features__splide" style="height: 460px; width: 100%; padding: 0; border: 0;"></iframe>
+<div class="features__splide splide js-slider-features">
+  <div class="splide__track">
+    <div class="splide__list"></div>
+  </div>
+</div>
 
 <$mt:Include module="footer"$>
 
-<$mt:Include module="common_bottom_js"$>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
-<script src="<$mt:BlogRelativeURL$>js/top/index.js"></script>
+<script>
+fetch("https://mttest.upward-test2.info/cgi-bin/mt/mt-data-api.cgi/v5/authentication", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  body: new URLSearchParams({
+  'username': 'Mariel',
+  'password': '28u9s20i',
+  'clientId': 'test'
+  }).toString()
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return response.json();
+})
+.then(data => {
+  let accessToken = data.accessToken;
+
+  fetch("https://mttest.upward-test2.info/cgi-bin/mt/mt-data-api.cgi/v5/sites/1/entries", {
+    method: "GET",
+    headers: {
+      "X-MT-Authorization": `MTAuth accessToken=${accessToken}`
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then(data => {
+    const splide = document.querySelector('.splide__list');
+    let splideInnerHTML = '';
+
+    data.items.forEach(item => {
+      splideInnerHTML +=`
+        <div class="splide__slide">
+          <a href="${item.permalink}">
+            <img class="features__slider-image" src="/${item.assets[0].filename}">
+            <h1 class="features__slider-title">${item.title}</h1>
+          </a>
+        </div>`;
+    });
+
+    splide.innerHTML = splideInnerHTML;
+
+    const splideFeatures = document.querySelector('.js-slider-features');
+
+    if (splideFeatures) {
+      const slider = new Splide( splideFeatures, {
+        type: 'loop',
+        focus: 'center',
+        pagination: false,
+        arrows: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        autoplay: true,
+        fixedWidth: 295,
+        gap: '15px',
+      });
+
+      slider.mount();
+    }
+  })
+  .catch(error => {
+    console.error("There was a problem with the fetch operation:", error);
+  });
+})
+.catch(error => {
+  console.error("There was a problem with the fetch operation:", error);
+});
+</script>
 </body>
 </html>
