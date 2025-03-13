@@ -1,0 +1,59 @@
+<!DOCTYPE html><$mt:Include module="config"$>
+<html lang="<$mt:BlogLanguage$>" itemscope itemtype="http://schema.org/WebPage">
+<head>
+<meta charset="<$mt:PublishCharset$>">
+<title><$mt:EntryTitle$> | <$mt:BlogName encode_html="1"$></title>
+<meta name="description" content="<$mt:EntryExcerpt$>">
+<meta name="keywords" content="<$mt:GetVar name="metakeywords"$><$mt:EntryKeywords$>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="<$mt:BlogURL encode_html="1"$>images/favicon.ico">
+<link rel="start" href="<$mt:BlogURL encode_html="1"$>">
+<link rel="alternate" type="application/atom+xml" title="Recent Entries" href="<$mt:Link template="feed_recent"$>">
+<$mt:CanonicalLink$>
+<!-- Open Graph Protocol -->
+<meta property="og:type" content="article">
+<meta property="og:locale" content="<$mt:BlogLanguage setvar="blog_lang"$><mt:If name="blog_lang" eq="ja">ja_JP<mt:Else><$mt:Var name="blog_lang"$></mt:If>">
+<meta property="og:title" content="<$mt:EntryTitle$> | <$mt:BlogName encode_html="1"$>">
+<meta property="og:url" content="<$mt:EntryPermalink encode_html="1"$>">
+<meta property="og:description" content="<$mt:EntryExcerpt$>">
+<meta property="og:site_name" content="<$mt:BlogName encode_html="1"$>">
+<meta property="og:image" content="<mt:EntryAssets type="image" sort_order="ascend" limit="1"><$mt:AssetThumbnailURL width="480"$><mt:Else><$mt:BlogURL encode_html="1"$>images/ogimage.png</mt:EntryAssets>">
+<!-- Microdata -->
+<meta itemprop="description" content="<$mt:EntryExcerpt$>">
+<link itemprop="url" href="<$mt:EntryPermalink encode_html="1"$>">
+<link itemprop="image" href="<mt:EntryAssets type="image" sort_order="ascend" limit="1"><$mt:AssetThumbnailURL width="480"$></mt:EntryAssets>">
+<$mt:Include module="common_stylesheet"$>
+<$mt:Include module="common_head_js"$>
+</head>
+
+<body id="top">
+
+<mt:SetVarBlock name="thispage">blog</mt:SetVarBlock>
+
+<$mt:Include module="header"$>
+
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs__list">
+      <a class="breadcrumbs__link" href="/">HOME</a>
+      <a class="breadcrumbs__link" href="/news">NEWS</a>
+      <span class="breadcrumbs__text"><$mt:EntryTitle$></span>
+    </div>
+  </div>
+</div>
+
+<div class="container__secondary">
+  <div class="title">
+    <h1 class="title__text">NEWS</h1><span class="title__subtitle">新着情報</span>
+  </div><span class="news__date news__date--single"><time datetime="<mt:EntryDate format_name="iso8601">"><__trans phrase="[_1]/[_2]/[_3]" params="<mt:entrydate format="%Y">%%<mt:entrydate format="%m">%%<mt:entrydate format="%d">"></span></time></span>
+  <h1 class="news__single-title"><$mt:EntryTitle$></h1>
+  <$mt:EntryBody$>
+  <$mt:EntryMore$>
+</div>
+
+<$mt:Include module="footer"$>
+
+<$mt:Include module="common_bottom_js"$>
+
+</body>
+</html>
